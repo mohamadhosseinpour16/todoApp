@@ -12,7 +12,7 @@ function renderData(List) {
                 <td>${title}</td>
                 <td>
                     <i class="fa-solid fa-pen-to-square"></i>
-                    <i class="fa-solid fa-trash"></i>
+                    <i onclick="deleteTodos(${id})" class="fa-solid fa-trash"></i>
                 </td>
             </tr>
     `;
@@ -31,12 +31,16 @@ function addTodos() {
     input.value = "";
   }
   renderData(todos);
-  console.log(todos);
 }
 function handleEnter(event) {
   if (event.key === "Enter") {
     addTodos();
   }
+}
+function deleteTodos(id) {
+  let find = todos.find((item) => item.id === id);
+  todos.splice(find, 1);
+  renderData(todos);
 }
 
 // events
