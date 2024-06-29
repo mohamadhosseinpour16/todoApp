@@ -1,5 +1,7 @@
 // select dom , var
 let table = document.querySelector("table");
+let input = document.querySelector("input");
+let btn = document.querySelector("button");
 
 // functions
 function renderData(List) {
@@ -15,10 +17,33 @@ function renderData(List) {
             </tr>
     `;
   }).join("");
-  table.innerHTML += template;
+  table.innerHTML = template;
+}
+function addTodos() {
+  if (input.value === "") {
+    input.classList.add("hvr-wobble-to-top-right");
+  } else {
+    const newObject = {
+      id: todos.length + 1,
+      title: input.value,
+    };
+    todos.push(newObject);
+    input.value = "";
+  }
+  renderData(todos);
+  console.log(todos);
+}
+function handleEnter(event) {
+  if (event.key === "Enter") {
+    addTodos();
+  }
 }
 
 // events
 window.addEventListener("load", function () {
   renderData(todos);
 });
+btn.addEventListener("click", function () {
+  addTodos();
+});
+input.addEventListener("keypress", handleEnter);

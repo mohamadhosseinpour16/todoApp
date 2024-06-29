@@ -32,9 +32,6 @@ table tr {
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
   padding: 1rem 0;
 }
-table tr th {
-  font-size: 1.5rem;
-}
 table tr td {
   font-size: 1.2rem;
   font-weight: 700;
@@ -46,7 +43,7 @@ table tr td i {
   padding: 0 0.3rem;
 }
 
-form {
+main {
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
@@ -54,10 +51,10 @@ form {
   height: 150px;
   width: 90%;
 }
-form label {
+main label {
   font-size: 1.5rem;
 }
-form input {
+main input {
   outline: none;
   border: 0.1px solid rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -65,10 +62,10 @@ form input {
   font-size: 1rem;
   font-weight: 700;
 }
-form input:focus {
+main input:focus {
   border: 1px solid #0366ee;
 }
-form button {
+main button {
   border: none;
   outline: none;
   cursor: pointer;
@@ -79,6 +76,6 @@ form button {
   transition: 0.5s;
   border-radius: 0.2rem;
 }
-form button:hover {
+main button:hover {
   background-color: #0250bc;
 }/*# sourceMappingURL=style.css.map */
