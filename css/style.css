@@ -40,9 +40,10 @@ table tr td {
   font-weight: 700;
 }
 table tr td i {
-  font-size: 1.5rem;
   cursor: pointer;
   text-align: center;
+  font-size: 1.5rem;
+  padding: 0 0.3rem;
 }
 
 form {
