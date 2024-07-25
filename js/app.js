@@ -11,7 +11,7 @@ function renderData(List) {
             <tr>
                 <td>${title}</td>
                 <td>
-                    <i class="fa-solid fa-pen-to-square"></i>
+                    <i onclick="editTodos(${id})" class="fa-solid fa-pen-to-square"></i>
                     <i onclick="deleteTodos(${id})" class="fa-solid fa-trash"></i>
                 </td>
             </tr>
@@ -39,6 +39,12 @@ function handleEnter(event) {
 }
 function deleteTodos(id) {
   let find = todos.find((item) => item.id === id);
+  todos.splice(find, 1);
+  renderData(todos);
+}
+function editTodos(id) {
+  let find = todos.find((item) => item.id === id);
+  input.value = find.title;
   todos.splice(find, 1);
   renderData(todos);
 }
